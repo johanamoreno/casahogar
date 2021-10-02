@@ -1,0 +1,21 @@
+.fuente{
+    font-family: 'Patrick Hand', cursive;
+}
+
+.fondo{
+    background-color: #07A1E1;
+}
+
+.zoom{
+    transition: transform .2s;
+}
+
+.zoom:hover{
+    transform: scale(1.3);
+}
+
+.fondoApp{
+    background-image: url('../img/imagen1.jpg');
+    background-attachment: fixed;
+    height: 400px;
+}
