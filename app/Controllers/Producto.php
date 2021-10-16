@@ -16,7 +16,15 @@ class Producto extends BaseController{
         $descripcion=$this->request->getpost("descripcion");
         $tipo=$this->request->getpost("tipo");
 
-        $datos=array(
+        if($this->validate('formularioProducto')){
+            echo("Todo bien..");
+        }else{
+            $mensaje="Favor diligenciar todos los campos";
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+        }
+
+
+      /*  $datos=array(
 
             "producto"=>$producto,
             "foto"=>$foto,
@@ -25,7 +33,7 @@ class Producto extends BaseController{
             "tipo"=>$tipo
         );
 
-        print_r($datos);
+        print_r($datos);*/
     }
 
 }

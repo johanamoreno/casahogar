@@ -16,7 +16,14 @@ class Mascota extends BaseController
         $descripcion=$this->request->getpost("descripcion");
         $tipo=$this->request->getpost("tipo");
 
-        $datos=array(
+        if($this->validate('formularioMascota')){
+            echo("Todo bien..");
+        }else{
+            $mensaje="Favor diligenciar todos los campos";
+            return redirect()->to(\site_url('/mascota/registro'))->with('mensaje',$mensaje);
+        }
+
+        /*$datos=array(
             
             "nombre"=>$nombre,
             "edad"=>$edad,
@@ -25,6 +32,6 @@ class Mascota extends BaseController
             "tipo"=>$tipo
         );
 
-        print_r($datos);
+        print_r($datos);*/
     }
 }
