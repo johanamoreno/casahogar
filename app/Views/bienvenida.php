@@ -15,7 +15,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark fondo">
   			<div class="container-fluid">
-    			<a class="navbar-brand fuente" href="#">
+    			<a class="navbar-brand fuente" href="<?= site_url('/') ?>">
 				<i class="fas fa-paw"></i>
 					Casa Hogar
 				</a>
@@ -74,9 +74,9 @@
 			<div class="row d-flex justify-content-center">
 				<div class="col-5" fuente>
 					<h4 class="text-center">Hogar de animales <span class="fuente"> ANIMALANDIA</span></h4>
-					<p>Casa hogar Animalandia, atiende desde 1996 aimales y fauna silvestre en estado de
-						abandono, ofreciendo atencion ntegral, ademas somo fabricantes de comida y 
-						accesorios para todo tipo de mascotas
+					<p>Casa hogar Animalandia, atiende desde 1996 animales y fauna silvestre en estado de
+						abandono, ofreciendo atencion integral, ademas somos fabricantes de comida y 
+						accesorios para todo tipo de mascotas.
 					</p>
 				</div>
 			</div>

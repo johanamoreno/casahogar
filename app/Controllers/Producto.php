@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\ProductoModelo;
+
 class Producto extends BaseController{
     
     public function index(){
@@ -17,7 +19,27 @@ class Producto extends BaseController{
         $tipo=$this->request->getpost("tipo");
 
         if($this->validate('formularioProducto')){
-            echo("Todo bien..");
+            try{
+                $modelo=new ProductoModelo();
+
+                $datos=array(
+
+                    "nombre"=>$producto,
+                    "foto"=>$foto,
+                    "precio"=>$precio,
+                    "descripcion"=>$descripcion,
+                    "tipo"=>$tipo
+                );
+
+                $modelo->insert($datos);
+
+                $mensaje="Exito agregando el producto";
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+            }catch(\Exception $error){
+                $mensaje=$error->getMessage();
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+            }
         }else{
             $mensaje="Favor diligenciar todos los campos";
             return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);

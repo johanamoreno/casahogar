@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\MascotaModelo;
+
 class Mascota extends BaseController
 {
     public function index(){
@@ -17,7 +19,25 @@ class Mascota extends BaseController
         $tipo=$this->request->getpost("tipo");
 
         if($this->validate('formularioMascota')){
-            echo("Todo bien..");
+            try{
+                $modelo=new MascotaModelo();
+
+                $datos=array(
+            
+                    "nombre"=>$nombre,
+                    "edad"=>$edad,
+                    "foto"=>$foto,
+                    "descripcion"=>$descripcion,
+                    "tipo"=>$tipo
+                );
+                $modelo->insert($datos);
+                $mensaje="Exito agregando la mascota";
+                return redirect()->to(site_url('/mascota/registro'))->with('mensaje',$mensaje);
+
+            }catch(\Exception $error){
+                $mensaje=$error->getMessage();
+                return redirect()->to(site_url('/mascota/registro'))->with('mensaje',$mensaje);
+            }
         }else{
             $mensaje="Favor diligenciar todos los campos";
             return redirect()->to(\site_url('/mascota/registro'))->with('mensaje',$mensaje);

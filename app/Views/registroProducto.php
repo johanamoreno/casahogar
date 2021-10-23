@@ -15,7 +15,7 @@
     <header>
 		<nav class="navbar navbar-expand-lg navbar-dark fondo">
   			<div class="container-fluid">
-    			<a class="navbar-brand fuente" href="#">
+    			<a class="navbar-brand fuente" href="<?= site_url('/') ?>">
 				<i class="fas fa-paw"></i>
 					Casa Hogar
 				</a>
