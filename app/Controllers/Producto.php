@@ -44,18 +44,37 @@ class Producto extends BaseController{
             $mensaje="Favor diligenciar todos los campos";
             return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
         }
-
-
-      /*  $datos=array(
-
-            "producto"=>$producto,
-            "foto"=>$foto,
-            "precio"=>$precio,
-            "descripcion"=>$descripcion,
-            "tipo"=>$tipo
-        );
-
-        print_r($datos);*/
     }
 
+    public function buscar(){
+
+        try{
+
+            $modelo=new ProductoModelo();
+            $resultado=$modelo->findAll();
+            $productos=array("productos"=>$resultado);
+
+            return view('listaProductos',$productos);
+
+        }catch(\Exception $error){
+
+        $mensaje=$error->getMessage();
+        return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+        }
+    }
+    
+    public function eliminar($id){
+        try{
+            $modelo=new ProductoModelo();
+            $modelo->where('id',$id)->delete();
+            $mensaje="Exito eliminando el producto";
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+        }catch(\Exception $error){
+            $mensaje=$error->getMessage();
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+        }
+        
+    }
+  
 }

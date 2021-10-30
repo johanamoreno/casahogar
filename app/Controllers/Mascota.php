@@ -54,4 +54,36 @@ class Mascota extends BaseController
 
         print_r($datos);*/
     }
+
+    public function buscar(){
+
+        try{
+
+            $modelo=new MascotaModelo();
+            $resultado=$modelo->findAll();
+            $mascotas=array("mascotas"=>$resultado);
+
+            return view('listaMascotas',$mascotas);
+
+        }catch(\Exception $error){
+        $mensaje=$error->getMessage();
+        return redirect()->to(site_url('/mascota/registro'))->with('mensaje',$mensaje);
+
+        }
+    
+    }
+
+    public function eliminar($id){
+        try{
+            $modelo=new MascotaModelo();
+            $modelo->where('id',$id)->delete();
+            $mensaje="Exito eliminando la mascota";
+            return redirect()->to(site_url('/mascota/registro'))->with('mensaje',$mensaje);
+
+        }catch(\Exception $error){
+            $mensaje=$error->getMessage();
+            return redirect()->to(site_url('/mascota/registro'))->with('mensaje',$mensaje);
+        }
+        
+    }
 }

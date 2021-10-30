@@ -30,8 +30,14 @@
        			 		<li class="nav-item">
           					<a class="nav-link active" href="<?= site_url('/productos/registro') ?>">Registro Producto</a>
         				</li>
-						<li class="nav-item">
+						    <li class="nav-item">
           					<a class="nav-link" href="<?= site_url('/mascota/registro') ?>">Registro Mascota</a>
+        				</li>
+                <li class="nav-item">
+          					<a class="nav-link" href="<?= site_url('/productos/listado') ?>">Productos</a>
+        				</li>
+                        <li class="nav-item">
+          					<a class="nav-link" href="<?= site_url('/mascota/listado') ?>">Mascotas</a>
         				</li>
       				</ul>
     			</div>
@@ -71,7 +77,7 @@
     </div>
     
     <button type="submit" class="btn btn-primary">Registrar Producto</button>
-  
+    <a class="btn btn-primary" href="<?= site_url('/productos/listado') ?>">Ver Inventario</a>
 </form>
 </div>
 
