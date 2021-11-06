@@ -77,4 +77,42 @@ class Producto extends BaseController{
         
     }
   
+    public function editar($id){
+
+        $producto=$this->request->getpost("producto");
+        $foto=$this->request->getpost("foto");
+        $precio=$this->request->getpost("precio");
+        $descripcion=$this->request->getpost("descripcion");
+        $tipo=$this->request->getpost("tipo");
+
+        if($this->validate('modificarProducto')){
+            try{
+                $modelo=new ProductoModelo();
+
+                $datos=array(
+
+                    "nombre"=>$producto,
+                    "foto"=>$foto,
+                    "precio"=>$precio,
+                    "descripcion"=>$descripcion,
+                    "tipo"=>$tipo
+                );
+
+                $modelo->update($id,$datos);
+
+                $mensaje="Exito editando el producto";
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+            }catch(\Exception $error){
+                $mensaje=$error->getMessage();
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+            }
+        }else{
+            $mensaje="Favor diligenciar todos los campos";
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+        }
+
+    }
+
+
 }

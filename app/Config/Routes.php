@@ -37,11 +37,13 @@ $routes->get('/productos/registro', 'Producto::index');
 $routes->post('/productos/registro/nuevo', 'Producto::registrar');
 $routes->get('/productos/listado', 'Producto::buscar');
 $routes->get('/productos/eliminar/(:num)', 'Producto::eliminar/$1');
+$routes->post('/productos/editar/(:num)', 'Producto::editar/$1');
 
 $routes->get('/mascota/registro', 'Mascota::index');
 $routes->post('/mascota/registro/nuevo', 'Mascota::registrar');
 $routes->get('/mascota/listado', 'Mascota::buscar');
 $routes->get('/mascota/eliminar/(:num)', 'Mascota::eliminar/$1');
+$routes->post('/mascota/editar/(:num)', 'Mascota::editar/$1');
 
 /*
  * --------------------------------------------------------------------

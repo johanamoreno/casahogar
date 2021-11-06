@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2021 a las 19:30:04
+-- Tiempo de generación: 06-11-2021 a las 18:06:28
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -37,6 +37,13 @@ CREATE TABLE `mascota` (
   `tipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `mascota`
+--
+
+INSERT INTO `mascota` (`id`, `nombre`, `edad`, `foto`, `descripcion`, `tipo`) VALUES
+(1, 'Luky', '9', 'no', 'cocker', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +58,16 @@ CREATE TABLE `productos` (
   `descripcion` varchar(200) NOT NULL,
   `tipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id`, `nombre`, `foto`, `precio`, `descripcion`, `tipo`) VALUES
+(3, 'Cuido Adultos', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido2.jpg?alt=media&token=b245bcc7-86c1-49f2-97ea-daad73ed66f2', 7000, 'Cuido para adultos', 1),
+(4, 'Cuido Gatos', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido3.jpg?alt=media&token=1ddddb7e-092b-46ee-9312-e42ba635b2af', 7000, 'comida para gatos', 2),
+(5, 'Comida en lata', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido4.jpg?alt=media&token=ce86d2eb-46ad-42dc-9db5-cf37c4113051', 4000, 'comida en lata para cachorros', 1),
+(6, 'Cuido para Gatos', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido5.jpg?alt=media&token=514da23a-9d59-442e-b5f4-3ddb285ab349', 6000, 'cuido para gatos', 2);
 
 --
 -- Índices para tablas volcadas
@@ -76,13 +93,13 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `mascota`
 --
 ALTER TABLE `mascota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

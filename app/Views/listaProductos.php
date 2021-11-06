@@ -58,7 +58,7 @@
                             <p class="card-text"><?=$producto["precio"]?></p>
                             <p class="card-text"><?=$producto["descripcion"]?></p>
                             <a data-bs-toggle="modal" data-bs-target="#confirmacion<?=$producto["id"]?>" href="#" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a>
-                            <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                            <a data-bs-toggle="modal" data-bs-target="#editar<?=$producto["id"]?>"href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                         </div>
                     </div>
 
@@ -77,6 +77,52 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                     <a href="<?= site_url('/productos/eliminar/'.$producto["id"])?>" class="btn btn-danger">Aceptar</a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="modal fade" id="editar<?=$producto["id"]?>">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header fondo text-white">
+                                        <h5 class="modal-title">Editar Producto</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-3 align-self-center">
+                                            <img src="<?=$producto["foto"]?>" alt="" class="img-fluid w-100">
+                                        </div>
+                                        <div class="col-9">
+                                            <form action="<?= site_url('/productos/editar/'.$producto["id"])?>" method="POST">
+                                            <div class="mb-3">
+                                                <label class="form-label">Producto</label>
+                                                <input type="text" class="form-control" name="producto" value="<?=$producto["nombre"]?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Foto</label>
+                                                <input type="text" class="form-control" name="foto" value="<?=$producto["foto"]?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Precio</label>
+                                                <input type="text" class="form-control" name="precio" value="<?=$producto["precio"]?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Descripcion</label>
+                                                <input type="text" class="form-control" name="descripcion" value="<?=$producto["descripcion"]?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Tipo</label>
+                                                <input type="text" class="form-control" name="tipo" value="<?=$producto["tipo"]?>">
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Modificar Producto</button>
+
+                                            </form>
+                                        </div>
+                                    </div>    
                                 </div>
                                 </div>
                             </div>

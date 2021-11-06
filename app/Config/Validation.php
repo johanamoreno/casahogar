@@ -45,7 +45,23 @@ class Validation
         'tipo'=>'required'
     ];
 
+    public $modificarProducto=[
+        'producto'=>'required',
+        'foto'=>'required',
+        'precio'=>'required',
+        'descripcion'=>'required',
+        'tipo'=>'required'
+    ];
+
     public $formularioMascota=[
+        'nombre'=>'required',
+        'edad'=>'required',
+        'foto'=>'required',
+        'descripcion'=>'required',
+        'tipo'=>'required'
+    ];
+
+    public $modificarMascota=[
         'nombre'=>'required',
         'edad'=>'required',
         'foto'=>'required',
