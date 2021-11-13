@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2021 a las 18:06:28
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.3.11
+-- Tiempo de generación: 13-11-2021 a las 05:14:58
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,7 +42,11 @@ CREATE TABLE `mascota` (
 --
 
 INSERT INTO `mascota` (`id`, `nombre`, `edad`, `foto`, `descripcion`, `tipo`) VALUES
-(1, 'Luky', '9', 'no', 'cocker', 1);
+(1, 'Luky', '9', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/mascota2.jpg?alt=media&token=ac3f63cf-9b2c-4d72-a314-6cf153e98147', 'cocker', 1),
+(3, 'Piolin', '3', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/mascota1.jpg?alt=media&token=c3991aa5-c741-48bb-b846-3dd05b89da3b', 'Hermoso pajaro', 3),
+(4, 'Juana', '10', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/mascota3.jpg?alt=media&token=fd029329-47cc-4d17-865d-b07066efc8ca', 'Iguana', 5),
+(5, 'Flecha Veloz', '9', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/mascota4.jpg?alt=media&token=114257ed-bbe6-443b-a1bd-4f5f68fcac92', 'Caballo pura sangre', 4),
+(6, 'Garfield', '3', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/mascota5.jpg?alt=media&token=350fd47f-46b3-4b58-a491-5a34a1a93ffd', 'Gato cachorros', 2);
 
 -- --------------------------------------------------------
 
@@ -64,10 +68,11 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `foto`, `precio`, `descripcion`, `tipo`) VALUES
-(3, 'Cuido Adultos', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido2.jpg?alt=media&token=b245bcc7-86c1-49f2-97ea-daad73ed66f2', 7000, 'Cuido para adultos', 1),
+(3, 'Cuido Gatos Adultos', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido2.jpg?alt=media&token=b245bcc7-86c1-49f2-97ea-daad73ed66f2', 7000, 'Cuido para gatos adultos', 1),
 (4, 'Cuido Gatos', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido3.jpg?alt=media&token=1ddddb7e-092b-46ee-9312-e42ba635b2af', 7000, 'comida para gatos', 2),
-(5, 'Comida en lata', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido4.jpg?alt=media&token=ce86d2eb-46ad-42dc-9db5-cf37c4113051', 4000, 'comida en lata para cachorros', 1),
-(6, 'Cuido para Gatos', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido5.jpg?alt=media&token=514da23a-9d59-442e-b5f4-3ddb285ab349', 6000, 'cuido para gatos', 2);
+(5, 'Comida En Lata', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido4.jpg?alt=media&token=ce86d2eb-46ad-42dc-9db5-cf37c4113051', 4000, 'comida en lata para cachorros', 1),
+(6, 'Cuido Para Gatos', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido5.jpg?alt=media&token=514da23a-9d59-442e-b5f4-3ddb285ab349', 6000, 'cuido para gatos', 2),
+(8, 'Cuido Para Perros', 'https://firebasestorage.googleapis.com/v0/b/fotoscasahogarjam.appspot.com/o/cuido1.jpg?alt=media&token=6080c1a5-795e-43c6-bf8b-c19ddd66c053', 38000, 'Cuido para perros adultos', 1);
 
 --
 -- Índices para tablas volcadas
@@ -93,13 +98,13 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `mascota`
 --
 ALTER TABLE `mascota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

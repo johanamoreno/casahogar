@@ -3,7 +3,7 @@
 }
 
 .fondo{
-    background-color: #07A1E1;
+    background-color: cadetblue;
 }
 
 .zoom{
@@ -15,7 +15,14 @@
 }
 
 .fondoApp{
-    background-image: url('../img/imagen1.jpg');
+    background-image: url('../img/imagen4.jpg');
     background-attachment: fixed;
     height: 400px;
 }
+
+.body{
+    background-color: #0f0009;
+}
+
+
+

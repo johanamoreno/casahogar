@@ -56,8 +56,8 @@
                         <div class="card-body">
                             <h5 class="card-title"><?=$mascota["nombre"]?></h5>
                             <p class="card-text"><?=$mascota["descripcion"]?></p>
-                            <a data-bs-toggle="modal" data-bs-target="#confirmacion<?=$mascota["id"]?>" href="#" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a>
-                            <a data-bs-toggle="modal" data-bs-target="#editar<?=$mascota["id"]?>"href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                            <a data-bs-toggle="modal" data-bs-target="#confirmacion<?=$mascota["id"]?>" href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                            <a data-bs-toggle="modal" data-bs-target="#editar<?=$mascota["id"]?>"href="#" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
                         </div>
                     </div>
 
@@ -117,7 +117,7 @@
                                                 <input type="text" class="form-control" name="tipo" value="<?=$mascota["tipo"]?>">
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary">Modificar Producto</button>
+                                            <button type="submit" class="btn btn-secondary">Modificar Mascota</button>
 
                                             </form>
                                         </div>
@@ -143,4 +143,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/3675f85246.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

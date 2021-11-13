@@ -44,7 +44,10 @@
   			</div>
 		</nav>
 	</header>
+  <br>
+  <br>
     <h2 class="text-center">Registro de Mascotas</h2>
+    <br>
     <div class="container mt-8">
     <form action="<?= site_url('/mascota/registro/nuevo') ?>" method="POST">
     
@@ -76,8 +79,8 @@
         </select>
     </div>
     
-    <button type="submit" class="btn btn-primary">Registrar Mascota</button>
-    <a class="btn btn-primary" href="<?= site_url('/mascota/listado') ?>">Ver Mascotas</a>
+    <button type="submit" class="btn btn-secondary col-4">Registrar Mascota</button>
+    <a class="btn btn-secondary col-4" href="<?= site_url('/mascota/listado') ?>">Ver Mascotas</a>
   
 </form>
 </div>
@@ -102,8 +105,15 @@
   <?php endif?>
 </section>
 
+
+
+
+
+
     <script type="module" src="<?=base_url('public/js/lanzarmodal.js')?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/3675f85246.js" crossorigin="anonymous"></script>
-    </body>
+  </body>
+
+
 </html>
